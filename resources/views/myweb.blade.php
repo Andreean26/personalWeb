@@ -43,9 +43,6 @@
                     <a href="#service" class="nav-item nav-link">Service</a>
                     <a href="#experience" class="nav-item nav-link">Experience</a>
                     <a href="#portfolio" class="nav-item nav-link">Portfolio</a>
-                    <a href="#quotes" class="nav-item nav-link">Quotes</a>
-                    <a href="#team" class="nav-item nav-link">Team</a>
-                    <a href="#blog" class="nav-item nav-link">Blog</a>
                     <a href="#footer" class="nav-item nav-link">Contact</a>
                 </div>
             </div>
@@ -91,7 +88,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <div class="about-img">
-                            <img src="img/about.jpg" alt="Image">
+                            <img src="https://cdn.discordapp.com/attachments/330320161263583232/1102763058889248828/IMG_20230502_080612.jpg" alt="Image">
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -116,71 +113,6 @@
         </div>
     </div>
     <!-- About End -->
-
-    <!-- Service Start -->
-    <div class="service" id="service">
-        <div class="container">
-            <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-                <p>What I do</p>
-                <h2>Awesome Quality Services</h2>
-            </div>
-            <div class="row">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.0s">
-                    <div class="service-item">
-                        <div class="service-icon">
-                            <i class="fa fa-laptop"></i>
-                        </div>
-                        <div class="service-text">
-                            <h3>Web Design</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet elit. Phase nec preti mi. Curabi facilis ornare velit non
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="service-item">
-                        <div class="service-icon">
-                            <i class="fa fa-laptop-code"></i>
-                        </div>
-                        <div class="service-text">
-                            <h3>Web Development</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet elit. Phase nec preti mi. Curabi facilis ornare velit non
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.4s">
-                    <div class="service-item">
-                        <div class="service-icon">
-                            <i class="fab fa-android"></i>
-                        </div>
-                        <div class="service-text">
-                            <h3>Apps Design</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet elit. Phase nec preti mi. Curabi facilis ornare velit non
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.6s">
-                    <div class="service-item">
-                        <div class="service-icon">
-                            <i class="fab fa-apple"></i>
-                        </div>
-                        <div class="service-text">
-                            <h3>Design Graphic</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet elit. Phase nec preti mi. Curabi facilis ornare velit non
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Service End -->
 
 
     <!-- Experience Start -->
@@ -222,37 +154,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
-                    <div class="timeline-text">
-                        <div class="timeline-date">2045 - 2050</div>
-                        <h2>Web Developer</h2>
-                        <h4>Soft Agency, San Francisco, CA</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet elit. Aliquam odio dolor, id luctus erat sagittis non. Ut blandit
-                            semper pretium.
-                        </p>
-                    </div>
-                </div>
-                <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
-                    <div class="timeline-text">
-                        <div class="timeline-date">2045 - 2050</div>
-                        <h2>Web Developer</h2>
-                        <h4>Soft Agency, San Francisco, CA</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet elit. Aliquam odio dolor, id luctus erat sagittis non. Ut blandit
-                            semper pretium.
-                        </p>
-                    </div>
-                </div>
-                <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
-                    <div class="timeline-text">
-                        <div class="timeline-date">2045 - 2050</div>
-                        <h2>Web Developer</h2>
-                        <h4>Soft Agency, San Francisco, CA</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet elit. Aliquam odio dolor, id luctus erat sagittis non. Ut blandit
-                            semper pretium.
-                        </p>
+
                     </div>
                 </div>
             </div>
@@ -276,13 +178,13 @@
             <div class="row">
                 <div class="col-12">
                     <ul id="portfolio-filter">
-                        <li data-filter="*" class="filter-1">All</li>
-@foreach ($portofolios as $item)
-
+                        <li data-filter="*" class="filter-1">Press !!!</li>
 
                     </ul>
                 </div>
+                @foreach ($portofolios as $item)
             </div>
+
             <div class="row portfolio-container">
                 <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-1 wow fadeInUp" data-wow-delay="0.0s">
                     <div class="portfolio-wrap">
@@ -290,9 +192,10 @@
                             <img src="{{ asset('images/' . $item->image) }}" alt="Image">
                         </div>
                         <div class="portfolio-text">
-                            <h3>eCommerce Website</h3>
+                            <h3>{{ $item->title }}</h3>
                         </div>
                     </div>
+
                 </div>
                 @endforeach
             </div>
@@ -302,213 +205,6 @@
     <!-- Portfolio End -->
 
 
-
-
-
-
-
-
-
-
-
-    <!-- Team Start -->
-    <div class="team" id="team">
-        <div class="container">
-            <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-                <p>My Team</p>
-                <h2>Expert Team Members</h2>
-            </div>
-            <div class="row">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.0s">
-                    <div class="team-item">
-                        <div class="team-img">
-                            <img src="img/team-1.jpg" alt="Image">
-                        </div>
-                        <div class="team-text">
-                            <h2>Mollie Ross</h2>
-                            <h4>Web Designer</h4>
-                            <p>
-                                Lorem ipsum dolor sit amet consec adipis elit. Etiam accum lacus
-                            </p>
-                            <div class="team-social">
-                                <a class="btn" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn" href=""><i class="fab fa-linkedin-in"></i></a>
-                                <a class="btn" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="team-item">
-                        <div class="team-img">
-                            <img src="img/team-2.jpg" alt="Image">
-                        </div>
-                        <div class="team-text">
-                            <h2>Dylan Adams</h2>
-                            <h4>Web Developer</h4>
-                            <p>
-                                Lorem ipsum dolor sit amet consec adipis elit. Etiam accum lacus
-                            </p>
-                            <div class="team-social">
-                                <a class="btn" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn" href=""><i class="fab fa-linkedin-in"></i></a>
-                                <a class="btn" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.4s">
-                    <div class="team-item">
-                        <div class="team-img">
-                            <img src="img/team-3.jpg" alt="Image">
-                        </div>
-                        <div class="team-text">
-                            <h2>Jennifer Page</h2>
-                            <h4>Apps Designer</h4>
-                            <p>
-                                Lorem ipsum dolor sit amet consec adipis elit. Etiam accum lacus
-                            </p>
-                            <div class="team-social">
-                                <a class="btn" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn" href=""><i class="fab fa-linkedin-in"></i></a>
-                                <a class="btn" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.6s">
-                    <div class="team-item">
-                        <div class="team-img">
-                            <img src="img/team-4.jpg" alt="Image">
-                        </div>
-                        <div class="team-text">
-                            <h2>Josh Dunn</h2>
-                            <h4>Apps Developer</h4>
-                            <p>
-                                Lorem ipsum dolor sit amet consec adipis elit. Etiam accum lacus
-                            </p>
-                            <div class="team-social">
-                                <a class="btn" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn" href=""><i class="fab fa-linkedin-in"></i></a>
-                                <a class="btn" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Team End -->
-
-
-    <!-- Contact Start -->
-    <div class="contact wow fadeInUp" data-wow-delay="0.1s" id="contact">
-        <div class="container-fluid">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-md-4"></div>
-                    <div class="col-md-8">
-                        <div class="contact-form">
-                            <div id="success"></div>
-                            <form action="mailto:fawazzakyadam26@gmail.com" name="sentMessage" id="contactForm"
-                                novalidate="novalidate" method="get" enctype="text/plain">
-                                <div class="control-group">
-                                    <input type="text" class="form-control" id="name"
-                                        placeholder="Your Name" required="required"
-                                        data-validation-required-message="Please enter your name" />
-                                    <p class="help-block"></p>
-                                </div>
-                                <div class="control-group">
-                                    <input type="email" class="form-control" id="email"
-                                        placeholder="Your Email" required="required"
-                                        data-validation-required-message="Please enter your email" />
-                                    <p class="help-block"></p>
-                                </div>
-                                <div class="control-group">
-                                    <input type="text" class="form-control" id="subject" placeholder="Subject"
-                                        required="required"
-                                        data-validation-required-message="Please enter a subject" />
-                                    <p class="help-block"></p>
-                                </div>
-                                <div class="control-group">
-                                    <textarea class="form-control" id="message" placeholder="Message" required="required"
-                                        data-validation-required-message="Please enter your message"></textarea>
-                                    <p class="help-block"></p>
-                                </div>
-                                <div>
-                                    <button class="btn" type="submit" id="sendMessageButton">Send
-                                        Message</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Contact End -->
-
-
-    <!-- Blog Start -->
-    <div class="blog" id="blog">
-        <div class="container">
-            <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-                <p>From Blog</p>
-                <h2>Latest Articles</h2>
-            </div>
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="blog-item wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="blog-img">
-                            <img src="img/blog-1.jpg" alt="Blog">
-                        </div>
-                        <div class="blog-text">
-                            <h2>Lorem ipsum dolor sit amet</h2>
-                            <div class="blog-meta">
-                                <p><i class="far fa-user"></i>Admin</p>
-                                <p><i class="far fa-list-alt"></i>Web Design</p>
-                                <p><i class="far fa-calendar-alt"></i>01-Jan-2045</p>
-                                <p><i class="far fa-comments"></i>5</p>
-                            </div>
-                            <p>
-                                Lorem ipsum dolor sit amet elit. Nullam commodo mattis mi. Nullam eu erat lectus. Proin
-                                viverra risus vitae luctus. Proin ut ante, vitae sapien. Fusce sem ac erat rhoncus,
-                                ornare mattis nisl massa et eros vitae pulvin
-                            </p>
-                            <a class="btn" href="">Read More <i class="fa fa-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="blog-item wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="blog-img">
-                            <img src="img/blog-2.jpg" alt="Blog">
-                        </div>
-                        <div class="blog-text">
-                            <h2>Lorem ipsum dolor sit amet</h2>
-                            <div class="blog-meta">
-                                <p><i class="far fa-user"></i>Admin</p>
-                                <p><i class="far fa-list-alt"></i>Apps Design</p>
-                                <p><i class="far fa-calendar-alt"></i>01-Jan-2045</p>
-                                <p><i class="far fa-comments"></i>10</p>
-                            </div>
-                            <p>
-                                Lorem ipsum dolor sit amet elit. Nullam commodo mattis mi. Nullam eu erat lectus. Proin
-                                viverra risus vitae luctus. Proin ut ante, vitae sapien. Fusce sem ac erat rhoncus,
-                                ornare mattis nisl massa et eros vitae pulvin
-                            </p>
-                            <a class="btn" href="">Read More <i class="fa fa-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Blog End -->
 
 
     <!-- Footer Start -->
