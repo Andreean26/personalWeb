@@ -3,212 +3,200 @@
 @section('content')
 
 <div>
-    <div class="alert alert-secondary mx-4" role="alert">
-        <span class="text-white">
-            <strong>Add, Edit, Delete features are not functional!</strong> This is a
-            <strong>PRO</strong> feature! Click <strong>
-            <a href="https://www.creative-tim.com/live/soft-ui-dashboard-pro-laravel" target="_blank" class="text-white">here</a></strong>
-            to see the PRO product!
-        </span>
-    </div>
-
-    <div class="row">
-        <div class="col-12">
-            <div class="card mb-4 mx-4">
-                <div class="card-header pb-0">
-                    <div class="d-flex flex-row justify-content-between">
-                        <div>
-                            <h5 class="mb-0">All Users</h5>
+        <div class="row">
+@if (Session::has('success') && !Session::has('alert'))
+        <div class="alert alert-success" role="alert">
+        {{ Session::get('success') }}
+        </div>
+@endif
+            <div class="col-12">
+                <div class="card mb-4 mx-4">
+                    <div class="card-header pb-0">
+                        <div class="d-flex flex-row justify-content-between">
+                            <div>
+                                <h5 class="mb-0">Add Portofolio</h5>
+                            </div>
+                            <button type="button" class="btn bg-gradient-primary mb-3" data-bs-toggle="modal"
+                                data-bs-target="#modal-form">Add New</button>
+                            <div class="modal fade" id="modal-form" tabindex="-1" role="dialog"
+                                aria-labelledby="modal-form" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-body p-0">
+                                            <div class="card card-plain">
+                                                <div class="card-header pb-0 text-left">
+                                                    <h3 class="font-weight-bolder text-primary text-gradient">Add New Portofolio</h3>
+                                                </div>
+                                                <div class="card-body">
+                                                    <form role="form text-left" method="POST"
+                                                        action="{{ route('Add-Portofolio') }}"
+                                                        enctype="multipart/form-data">
+                                                        @csrf
+                                                        <label>Title</label>
+                                                        <div class="input-group mb-3">
+                                                            <input type="text" class="form-control" placeholder="Title"
+                                                                aria-label="Title" aria-describedby="email-addon"
+                                                                name="title">
+                                                        </div>
+                                                        <label>Description</label>
+                                                        <div class="input-group mb-3">
+                                                            <textarea class="form-control" placeholder="Description" aria-label="Description" aria-describedby="password-addon"
+                                                                name="description"></textarea>
+                                                        </div>
+                                                        <label>Upload Image</label>
+                                                        <div class="input-group mb-3">
+                                                            <input type="file" class="form-control"
+                                                                placeholder="Upload Image" aria-label="Upload Image"
+                                                                aria-describedby="password-addon" name="image">
+                                                        </div>
+                                                        <div class="text-center">
+                                                            <button type="submit"
+                                                                class="btn btn-round bg-gradient-primary btn-lg w-100 mt-4 mb-0">Submit</button>
+                                                        </div>
+                                                        </p>
+                                                </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <a href="#" class="btn bg-gradient-primary btn-sm mb-0" type="button">+&nbsp; New User</a>
                     </div>
-                </div>
-                <div class="card-body px-0 pt-0 pb-2">
-                    <div class="table-responsive p-0">
-                        <table class="table align-items-center mb-0">
-                            <thead>
-                                <tr>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        ID
-                                    </th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                        Photo
-                                    </th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Name
-                                    </th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Email
-                                    </th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        role
-                                    </th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Creation Date
-                                    </th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Action
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="ps-4">
-                                        <p class="text-xs font-weight-bold mb-0">1</p>
-                                    </td>
-                                    <td>
-                                        <div>
-                                            <img src="../assets/img/team-2.jpg" class="avatar avatar-sm me-3">
-                                        </div>
-                                    </td>
-                                    <td class="text-center">
-                                        <p class="text-xs font-weight-bold mb-0">Admin</p>
-                                    </td>
-                                    <td class="text-center">
-                                        <p class="text-xs font-weight-bold mb-0">admin@softui.com</p>
-                                    </td>
-                                    <td class="text-center">
-                                        <p class="text-xs font-weight-bold mb-0">Admin</p>
-                                    </td>
-                                    <td class="text-center">
-                                        <span class="text-secondary text-xs font-weight-bold">16/06/18</span>
-                                    </td>
-                                    <td class="text-center">
-                                        <a href="#" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit user">
-                                            <i class="fas fa-user-edit text-secondary"></i>
-                                        </a>
-                                        <span>
-                                            <i class="cursor-pointer fas fa-trash text-secondary"></i>
-                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="ps-4">
-                                        <p class="text-xs font-weight-bold mb-0">2</p>
-                                    </td>
-                                    <td>
-                                        <div>
-                                            <img src="/assets/img/team-1.jpg" class="avatar avatar-sm me-3">
-                                        </div>
-                                    </td>
-                                    <td class="text-center">
-                                        <p class="text-xs font-weight-bold mb-0">Creator</p>
-                                    </td>
-                                    <td class="text-center">
-                                        <p class="text-xs font-weight-bold mb-0">creator@softui.com</p>
-                                    </td>
-                                    <td class="text-center">
-                                        <p class="text-xs font-weight-bold mb-0">Creator</p>
-                                    </td>
-                                    <td class="text-center">
-                                        <span class="text-secondary text-xs font-weight-bold">05/05/20</span>
-                                    </td>
-                                    <td class="text-center">
-                                        <a href="#" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit user">
-                                            <i class="fas fa-user-edit text-secondary"></i>
-                                        </a>
-                                        <span>
-                                            <i class="cursor-pointer fas fa-trash text-secondary"></i>
-                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="ps-4">
-                                        <p class="text-xs font-weight-bold mb-0">3</p>
-                                    </td>
-                                    <td>
-                                        <div>
-                                            <img src="/assets/img/team-3.jpg" class="avatar avatar-sm me-3">
-                                        </div>
-                                    </td>
-                                    <td class="text-center">
-                                        <p class="text-xs font-weight-bold mb-0">Member</p>
-                                    </td>
-                                    <td class="text-center">
-                                        <p class="text-xs font-weight-bold mb-0">member@softui.com</p>
-                                    </td>
-                                    <td class="text-center">
-                                        <p class="text-xs font-weight-bold mb-0">Member</p>
-                                    </td>
-                                    <td class="text-center">
-                                        <span class="text-secondary text-xs font-weight-bold">23/06/20</span>
-                                    </td>
-                                    <td class="text-center">
-                                        <a href="#" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit user">
-                                            <i class="fas fa-user-edit text-secondary"></i>
-                                        </a>
-                                        <span>
-                                            <i class="cursor-pointer fas fa-trash text-secondary"></i>
-                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="ps-4">
-                                        <p class="text-xs font-weight-bold mb-0">4</p>
-                                    </td>
-                                    <td>
-                                        <div>
-                                            <img src="/assets/img/team-4.jpg" class="avatar avatar-sm me-3">
-                                        </div>
-                                    </td>
-                                    <td class="text-center">
-                                        <p class="text-xs font-weight-bold mb-0">Peterson</p>
-                                    </td>
-                                    <td class="text-center">
-                                        <p class="text-xs font-weight-bold mb-0">peterson@softui.com</p>
-                                    </td>
-                                    <td class="text-center">
-                                        <p class="text-xs font-weight-bold mb-0">Member</p>
-                                    </td>
-                                    <td class="text-center">
-                                        <span class="text-secondary text-xs font-weight-bold">26/10/17</span>
-                                    </td>
-                                    <td class="text-center">
-                                        <a href="#" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit user">
-                                            <i class="fas fa-user-edit text-secondary"></i>
-                                        </a>
-                                        <span>
-                                            <i class="cursor-pointer fas fa-trash text-secondary"></i>
-                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="ps-4">
-                                        <p class="text-xs font-weight-bold mb-0">5</p>
-                                    </td>
-                                    <td>
-                                        <div>
-                                            <img src="/assets/img/marie.jpg" class="avatar avatar-sm me-3">
-                                        </div>
-                                    </td>
-                                    <td class="text-center">
-                                        <p class="text-xs font-weight-bold mb-0">Marie</p>
-                                    </td>
-                                    <td class="text-center">
-                                        <p class="text-xs font-weight-bold mb-0">marie@softui.com</p>
-                                    </td>
-                                    <td class="text-center">
-                                        <p class="text-xs font-weight-bold mb-0">Creator</p>
-                                    </td>
-                                    <td class="text-center">
-                                        <span class="text-secondary text-xs font-weight-bold">23/01/21</span>
-                                    </td>
-                                    <td class="text-center">
-                                        <a href="#" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit user">
-                                            <i class="fas fa-user-edit text-secondary"></i>
-                                        </a>
-                                        <span>
-                                            <i class="cursor-pointer fas fa-trash text-secondary"></i>
-                                        </span>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div class="card-body px-0 pt-0 pb-2">
+                        <div class="table-responsive p-0">
+                            <table class="table align-items-center mb-0">
+                                <thead>
+                                    <tr>
+                                        <th
+                                            class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
+                                            Title
+                                        </th>
+                                        <th
+                                            class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                            Description
+                                        </th>
+                                        <th
+                                            class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                            Image
+                                        </th>
+                                        <th
+                                            class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                            Action
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($portofolios as $item)
+                                        <tr>
+                                            <td class="text-center">
+
+                                                    <p class="text-xs font-weight-bold mb-0 ">{{ $item->title }}</p>
+
+                                            </td>
+                                            <td class="text-center">
+                                                <p class="text-xs font-weight-bold mb-0">{{ $item->description }}</p>
+                                            </td>
+                                            <td class="text-center">
+                                                <img src="{{ asset('images/' . $item->image) }}" alt="image"
+                                                    class="img-fluid rounded shadow" style="width: 100px">
+                                            </td>
+                                            <td class="text-center">
+                                                <button type="button"
+                                                    class="btn bg-gradient-info"
+                                                    data-bs-toggle="modal"
+                                                    data-bs-target="#modal-form-edit-{{ $item->id }}">Edit
+
+                                                </button>
+                                                <div class="modal fade" id="modal-form-edit-{{ $item->id }}"
+                                                    tabindex="-1" role="dialog" aria-labelledby="modal-form"
+                                                    aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered modal-md"
+                                                        role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-body p-0">
+                                                                <div class="card card-plain">
+                                                                    <div class="card-header pb-0 text-left">
+                                                                        <h3
+                                                                            class="text-left font-weight-bolder text-info text-gradient">
+                                                                            Edit Portofolio</h3>
+                                                                    </div>
+                                                                    <div class="card-body">
+                                                                        <form role="form text-left" method="POST"
+                                                                            action="{{ route('Edit-Portofolio', $item->id) }}"
+                                                                            enctype="multipart/form-data">
+                                                                            @csrf
+                                                                            <label>Title</label>
+                                                                            <div class="input-group mb-3">
+                                                                                <input type="text" class="form-control"
+                                                                                    placeholder="Title" aria-label="Title"
+                                                                                    aria-describedby="email-addon"
+                                                                                    name="title"
+                                                                                    value="{{ $item->title }}">
+                                                                            </div>
+                                                                            <label>Description</label>
+                                                                            <div class="input-group mb-3">
+                                                                                <textarea class="form-control" placeholder="Description" aria-label="Description" aria-describedby="password-addon"
+                                                                                    name="description" value="{{ $item->description }}"></textarea>
+                                                                            </div>
+                                                                            <label>Upload Image</label>
+                                                                            <div class="input-group mb-3">
+                                                                                <input type="file" class="form-control"
+                                                                                    placeholder="Upload Image"
+                                                                                    aria-label="Upload Image"
+                                                                                    aria-describedby="password-addon"
+                                                                                    name="image"
+                                                                                    value="{{ $item->image }}">
+                                                                            </div>
+                                                                            <div class="text-center">
+                                                                                <button type="submit"
+                                                                                    class="btn btn-round bg-gradient-info btn-lg w-100 mt-4 mb-0">Submit</button>
+                                                                            </div>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                                 <span>
+                                                    <button type="button" class="btn bg-gradient-danger mb-3" data-bs-toggle="modal" data-bs-target="#modal-notification">Delete</button>
+                                                    <div class="modal fade" id="modal-notification" tabindex="-1" role="dialog" aria-labelledby="modal-notification" aria-hidden="true">
+                                                      <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
+                                                        <div class="modal-content">
+                                                          <div class="modal-header">
+                                                            <h6 class="modal-title" id="modal-title-notification">delete {{$item->title}}</h6>
+                                                            <button type="button" class="btn-close text-dark" data-bs-dismiss="modal" aria-label="Close">
+                                                              <span aria-hidden="true">×</span>
+                                                            </button>
+                                                          </div>
+                                                          <div class="modal-body">
+                                                            <div class="py-3 text-center">
+                                                              <i class="ni ni-bell-55 ni-3x"></i>
+                                                              <h4 class="text-gradient text-danger mt-4">You should Delete this!</h4>
+                                                            </div>
+                                                          </div>
+                                                          <form action="{{ route('Delete-Portofolio', $item->id) }}"
+                                                            method="POST">
+                                                            @csrf
+                                                            <div class="modal-footer">
+                                                                <button type="submit" class="btn bg-gradient-warning">Ok,
+                                                                    Got it</button>
+                                                            </div>
+                                                        </form>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
- 
 @endsection
