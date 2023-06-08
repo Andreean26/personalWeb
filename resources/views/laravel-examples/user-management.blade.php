@@ -160,12 +160,12 @@
                                                 </div>
                                                 </div>
                                                  <span>
-                                                    <button type="button" class="btn bg-gradient-danger mb-3" data-bs-toggle="modal" data-bs-target="#modal-notification">Delete</button>
-                                                    <div class="modal fade" id="modal-notification" tabindex="-1" role="dialog" aria-labelledby="modal-notification" aria-hidden="true">
+                                                    <button type="button" class="btn bg-gradient-danger mb-3" data-bs-toggle="modal" data-bs-target="#modal-form-delete-{{ $item->id }}">Delete</button>
+                                                    <div class="modal fade" id="modal-form-delete-{{ $item->id }}" tabindex="-1" role="dialog" aria-labelledby="modal-notification" aria-hidden="true">
                                                       <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
                                                         <div class="modal-content">
                                                           <div class="modal-header">
-                                                            <h6 class="modal-title" id="modal-title-notification">delete {{$item->title}}</h6>
+                                                            <h6 class="modal-title" id="modal-form-delete-{{ $item->id }}">delete {{$item->title}}</h6>
                                                             <button type="button" class="btn-close text-dark" data-bs-dismiss="modal" aria-label="Close">
                                                               <span aria-hidden="true">×</span>
                                                             </button>
@@ -186,7 +186,7 @@
                                                         </form>
                                                         </div>
                                                       </div>
-                                                    </div>
+                                                    </div>
                                                 </span>
                                             </td>
                                         </tr>
