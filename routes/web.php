@@ -45,8 +45,10 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('static-sign-up');
 	})->name('sign-up');
 
+    Route::get('billing', function () {
+		return view('category');
+	})->name('billing');
 
-    Route::get('user-profile', [WebPortofolioController::class, 'index'])->name('user-profile');
 
 
 
@@ -60,6 +62,7 @@ Route::group(['middleware' => 'auth'], function () {
 	})->name('sign-up');
 });
 
+Route::get('user-profile', [WebPortofolioController::class, 'index'])->name('user-profile');
 
 
 Route::group(['middleware' => 'guest'], function () {
